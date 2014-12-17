@@ -13,11 +13,16 @@ $E.store.find('mrFriend').then(function(mrFriend) {
   });
 });
 
+5-  ember g route mrFriends/index
+6-  ember g route mrFriends/new
+7-  create an Ember partial42 in app/templates/mr-friends/-form.hbs
+8-  ember g controller mrFriends/new --type=object
+9-  update app/routes/mr-friends/new.js
+10- create the file app/routes/application.js
+11- ...
+12- ember g route mrFriends/show
 
 
-5- ember g route mrFriends/index
-
-
-
+13- ember g route mrFriends/edit
 
 EOF

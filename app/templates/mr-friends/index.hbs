@@ -1,6 +1,12 @@
 <h1>Friends Index</h1>
+{{! The context here is the controller}}
+<h2>Total friends: {{length}}</h2>
 <ul>
   {{#each}}
-  <li>{{firstName}} {{lastName}}</li>
+    <li>
+      {{#link-to 'mrFriends.show' this}}
+        {{firstName}} {{lastName}}
+      {{/link-to}}
+    </li>
   {{/each}}
 </ul>

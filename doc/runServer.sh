@@ -1,0 +1,1 @@
+ember server --proxy http://app.konacloud.io
