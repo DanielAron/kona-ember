@@ -1,0 +1,14 @@
+Friends API url>
+http://app.konacloud.io/api/daniel/embercli101/mr_friends
+
+In Chrome console debug with>
+$E.store.find('mrFriend');
+
+
+1- ember generate resource mrFriends firstName:string lastName:string email:string twitter:string totalArticles:number
+2- config/environment.js | uncomment LOG.RESOLVER
+3- ember g adapter application
+4- ember g serializer mrFriend
+
+
+EOF
