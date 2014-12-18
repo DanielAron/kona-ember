@@ -2,17 +2,10 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.RESTSerializer.extend({
-  normalizeHash: {
-    mrFriends: function(hash) {
-        hash.id = hash._id;
-        delete hash._id;
-        return hash;
-    },
-      mrFriend: function(hash) {
-        hash.id = hash._id;
-        delete hash._id;
-        return hash;
-      }
+  normalize: function(type, hash, property) {
+    hash.id = hash._id;
+    delete hash._id;
+    return this._super(type, hash, property);
   },
   keyForAttribute: function(attr) {
     return Ember.String.underscore(attr);
@@ -20,6 +13,7 @@ export default DS.RESTSerializer.extend({
   extractSingle: function(store, type, payload) {
     // console.log('extractSingle is called');
     // console.log(payload);
+    console.log(type);
     payload = { mrFriend: payload.data };
     return this._super(store, type, payload);
   },
