@@ -1,28 +1,15 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  isValid: Ember.computed(
-    'email',
-    'firstName',
-    'lastName',
-    'twitter',
-    function() {
-      return !Ember.isEmpty(this.get('email')) && !Ember.isEmpty(this.get('firstName')) && !Ember.isEmpty(this.get('lastName')) && !Ember.isEmpty(this.get('twitter'));
-    }
-  ),
+export default Ember.ObjectController.extend({
   actions: {
     save: function() {
-      if (this.get('isValid')) {
         var _this = this;
         this.get('model').save().then(function(mrFriend) {
           _this.transitionToRoute('mrFriends.show', mrFriend);
         });
-      } else {
-        this.set('errorMessage', 'You have to fill all the fields');
-      }
     },
     cancel: function() {
-      this.transitionToRoute('mrFriends');
+      return true;
     }
   }
 });

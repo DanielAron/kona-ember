@@ -9,8 +9,9 @@ Router.map(function() {
   this.resource('mrFriends', function() {
     this.route('new');
     this.route('show', { path: ':mrFriend_id' });
-    this.route('edit', { path: ':mrFriend_id/edit' });    
+    this.route('edit', { path: ':mrFriend_id/edit' });
   });
+  this.route('aplication');
 });
 
 export default Router;

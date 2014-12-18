@@ -9,6 +9,10 @@ export default Ember.Route.extend({
     cancel: function() {
       console.log('+--- cancel action bubbled up to friends route');
       return true;
+    },
+    delete: function(friend) {
+      mrFriend.destroyRecord();
+      this.transitionTo('mrFriends.index');
     }
   }
 });
