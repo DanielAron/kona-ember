@@ -3,18 +3,16 @@ import Ember from 'ember';
 
 export default DS.RESTSerializer.extend({
   normalizeHash: {
-    kona: function(hash) {
+    mrFriends: function(hash) {
+        hash.id = hash._id;
+        delete hash._id;
+        return hash;
     },
-      mrFriends: function(hash) {
-      hash.id = hash._id;
-      delete hash._id;
-      return hash;
-    },
-    mrFriend: function(hash) {
-      hash.id = hash._id;
-      delete hash._id;
-      return hash;
-    }
+      mrFriend: function(hash) {
+        hash.id = hash._id;
+        delete hash._id;
+        return hash;
+      }
   },
   keyForAttribute: function(attr) {
     return Ember.String.underscore(attr);
@@ -34,3 +32,6 @@ export default DS.RESTSerializer.extend({
     Ember.merge(hash, this.serialize(record, options));
   }
 });
+
+
+//ref: https://github.com/samharnack/ember-model-parse-adapter
