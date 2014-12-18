@@ -6,7 +6,7 @@ http://app.konacloud.io/api/daniel/embercli101/mr_friends
 3- ember g adapter application
 4- ember g serializer mrFriend
 
-In Chrome console debug with>
+In Chrome console test it with>
 $E.store.find('mrFriend').then(function(mrFriend) {
   mrFriend.forEach(function(mrFriend) {
   console.log('Hi from ' + mrFriend.get('firstName'));
